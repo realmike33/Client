@@ -21,6 +21,10 @@ var app = angular.module('Daas', [
       url:'/signup',
       templateUrl: 'signup/signup.html',
       controller: 'SignupController'
+    })
+    .state('examples', {
+      url: '/examples',
+      templateUrl: 'example/example.html'
     });
   $urlRouterProvider.otherwise('/');
 });

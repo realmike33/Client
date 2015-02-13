@@ -1,5 +1,50 @@
 <div>
-  <input placeholder="username" ng-model="username">
-  <input placeholder="password" ng-model="password">
-  <button ng-click="login()">login</button>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <h2>D.A.A.S</h3>
+      </div>
+      <div class="navbar-right">
+        <button ui-sref="home" class="btn btn-default btn-lg navbar-btn">Home</button>
+        <button ui-sref="examples" class="btn btn-default btn-lg navbar-btn">Example</button>
+        <button ui-sref="signup" class="btn btn-default btn-lg navbar-btn">Sign Up</button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="login-container">
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="inputUsername" class="col-sm-2 control-label">Username:</label>
+        <div class="col-sm-3">
+          <input id="inputUsername" type="text" placeholder="Username" class="form-control" ng-model="username">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="inputPassword" class="col-sm-2 control-label">Password:</label>
+        <div class="col-sm-3">
+          <input id="inputPassword" type="text" placeholder="Password" class="form-control" ng-model="password">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label>
+             <input type="checkbox"> Remember me
+            </label>
+            <span><a ui-sref="signup">Not Registered? Signup Here</a></span>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button ng-click="login()" type="submit" class="btn btn-default">Sign in</button>
+        </div>
+      </div>
+    </form>
+
+  </div>
+    
 </div>
