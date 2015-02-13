@@ -2,7 +2,8 @@ var app = angular.module('Daas', [
   'ui.router',
   'Daas.home',
   'Daas.login',
-  'Daas.signup'
+  'Daas.signup',
+  'Daas.dashboardDirective'
   ])
 
 .config(function($stateProvider, $urlRouterProvider){
@@ -25,6 +26,10 @@ var app = angular.module('Daas', [
     .state('examples', {
       url: '/examples',
       templateUrl: 'example/example.html'
+    })
+    .state('dashboardCreator', {
+      url: '/dashCreator',
+      templateUrl: 'dashboardCreator/dash-template.html'
     });
   $urlRouterProvider.otherwise('/');
 });
