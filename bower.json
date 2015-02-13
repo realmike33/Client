@@ -19,6 +19,7 @@
     "react": "~0.12.2",
     "angular-ui-router": "~0.2.13",
     "d3": "~3.5.5",
-    "bootstrap": "~3.3.2"
+    "bootstrap": "~3.3.2",
+    "greensock": "~1.15.1"
   }
 }
