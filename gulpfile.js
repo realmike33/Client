@@ -19,4 +19,4 @@ gulp.task('watch', function(){
 	gulp.watch(paths.scripts, ['jshint']);
 });
 
-gulp.task('install', shell.task(['npm install', 'bower install']));
+gulp.task('karma', shell.task(['karma start']));
