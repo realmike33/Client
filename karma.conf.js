@@ -18,14 +18,17 @@ module.exports = function(config) {
       //Dependency files
       'app/lib/angular/angular.js',
       'app/lib/angular-ui-router/release/angular-ui-router.js',
-      'app/lib/angular-mocks/angular-mocks.js',
       'app/lib/angular-ui-router/src/**.js',
       'app/lib/react/react.js',
       'app/lib/d3/d3.min.js',
 
       //our app files
-      'app/*/*.js',
-      'app/**/*.js',
+      'app/home/*.js',
+      'app/example/*.js',
+      'app/login/*.js',
+      'app/signup/*.js',
+      'app/app.js',
+      'app/services/*.js',
 
       //our spec file
       'node_modules/expect.js/index.js',
