@@ -21,11 +21,11 @@ module.exports = function(config) {
       'app/lib/angular-mocks/angular-mocks.js',
       'app/lib/angular-ui-router/src/**.js',
       'app/lib/react/react.js',
-      'app/lib/d3/d3.min.js'
+      'app/lib/d3/d3.min.js',
 
       //our app files
-      'app/**/*.js',
       'app/*/*.js',
+      'app/**/*.js',
 
       //our spec file
       'node_modules/expect.js/index.js',
