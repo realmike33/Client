@@ -6,9 +6,11 @@ angular.module('Daas.login', [])
   	 var obj = {};
   	 obj.username = $scope.username;
   	 obj.password = $scope.password
-  	 console.log(obj);	
+  	 console.log(obj);
   	}else{
       console.log('fucked');
     }
-  }
+  };
+
+  $scope.loginFacebook = Auth.facebookLogin;
 });

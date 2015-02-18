@@ -18,39 +18,6 @@ var paths = {
     uglify: ['./min/**/*.js']
 };
 
-gulp.task('minify-css', function(){
-  gulp.src('./app/styles/**/*.css')
-      .pipe(minifyCSS({keepBreaks:true}))
-      .pipe(gulp.dest(paths.min[0]));
-});
-
-
-gulp.task('minify-html', function(){
-  var opt = {
-    empty: true,
-    cdata: true,
-    spare: true,
-    quotes: true
-  };
-
-  gulp.src(paths.html)
-      .pipe(minifyHTML(opt))
-      .pipe(gulp.dest(paths.min[0]))
-});
-
-gulp.task('uglify', function(){
-  gulp.src(paths.uglify)
-  .pipe(uglify())
-  .pipe(gulp.dest(paths.min[0]));
-});
-
-
-gulp.task('minify', function(){
-  return gulp.src(paths.scripts)
-             .pipe(ngAnnotate())
-             .pipe(gulp.dest(paths.min[0]))
-});
-
 //compiles stylus into basic css
 gulp.task('stylus', function(){
   return gulp.src(paths.styles[1])
@@ -74,7 +41,7 @@ gulp.task('watch', ['serve'], function(){
 });
 
 //runs tests
-gulp.task('karma', shell.task(['karma start']));
+// gulp.task('karma', shell.task(['karma start']));
 
 //shows in terminal when browser reloads
 function reportChange(event){
@@ -86,14 +53,41 @@ gulp.task('serve', function(done){
   browserSync({
     port: 3000,
     server: {
-      baseDir: ['app'],
-      middleware: function(req, res, next){
-        res.setHeader('Access-Control-Allow-Origin', '*');
-        next();
-      }
+      baseDir: ['app']
     }
   }, done);
 });
 
-//build tool for deployment
+// gulp.task('minify-css', function(){
+//   gulp.src('./app/styles/**/*.css')
+//       .pipe(minifyCSS({keepBreaks:true}))
+//       .pipe(gulp.dest(paths.min[0]));
+// });
+
+
+// gulp.task('minify-html', function(){
+//   var opt = {
+//     empty: true,
+//     cdata: true,
+//     spare: true,
+//     quotes: true
+//   };
+
+//   gulp.src(paths.html)
+//       .pipe(minifyHTML(opt))
+//       .pipe(gulp.dest(paths.min[0]))
+// });
+
+// gulp.task('uglify', function(){
+//   gulp.src(paths.uglify)
+//   .pipe(uglify())
+//   .pipe(gulp.dest(paths.min[0]));
+// });
+
+
+// gulp.task('minify', function(){
+//   return gulp.src(paths.scripts)
+//              .pipe(ngAnnotate())
+//              .pipe(gulp.dest(paths.min[0]))
+// });
 

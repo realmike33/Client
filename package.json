@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "yo",
   "main": "app.js",
-  "scripts": {
-    "test": "karma start --single-run --browsers PhantomJS"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/realmike33/client.git"

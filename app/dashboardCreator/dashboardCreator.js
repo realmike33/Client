@@ -1,17 +1,25 @@
-(function(){
+// (function(){
 
   angular.module('Daas.dashboardDirective', [])
 
-  .directive('pTag', function(){
-    return function(scope, element){
-      var draggables = Draggable.create('#' + element[0].id, {
-            bounds: '#p-container',
-            edgeResistance: 0.65,
-            type: 'x,y'
-          });
-        var myDraggable = draggables[0];
-        myDraggable.enabled(true);
-      }
-    });
-
-})();
+//   .directive('draggable', function(){
+//     var gridWidth = 3000;
+//     var gridHeight = 3000;
+//     return function(scope, element){
+//       var tag = element[0].id;
+//       var draggables = Draggable.create('#' + tag, {
+//         type: 'x,y',
+//         edgeResistance: .78,
+//         bounds: '#p-container',
+//         snap:{
+//           x: function(endValue) {
+//             return Math.round(endValue / gridWidth) * gridWidth;
+//           },
+//           y: function(endValue) {
+//             return Math.round(endValue / gridHeight) * gridHeight;
+//           }
+//         }
+//       });
+//     }
+//   });
+// })();
