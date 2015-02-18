@@ -1,4 +1,6 @@
-app.factory('Auth', function($http){
+angular.module('Daas.auth.service', [])
+
+.factory('Auth', function($http){
   return {
     facebookLogin: function(){
       $http({

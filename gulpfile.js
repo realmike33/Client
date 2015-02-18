@@ -10,10 +10,10 @@ var minifyCSS = require('gulp-minify-css');
 var uglify = require('gulp-uglify');
 
 var paths = {
-    scripts: ['./app/**/*.js', '!./app/lib/**/*.js'],
+    scripts: ['./Daas/**/*.js', '!./Daas/lib/**/*.js'],
     styles: ['./styles/**/*.styl', './styles/main.styl'],
     test: ['./specs/**/*.js'],
-    html: ['./app/**/*.html'],
+    html: ['./Daas/**/*.html'],
     min: ['./min'],
     uglify: ['./min/**/*.js']
 };
@@ -22,7 +22,7 @@ var paths = {
 gulp.task('stylus', function(){
   return gulp.src(paths.styles[1])
               .pipe(stylus())
-              .pipe(gulp.dest('./app/styles'));
+              .pipe(gulp.dest('./Daas/styles'));
 });
 
 //lints js files
@@ -53,13 +53,13 @@ gulp.task('serve', function(done){
   browserSync({
     port: 3000,
     server: {
-      baseDir: ['app']
+      baseDir: 'Daas',
     }
   }, done);
 });
 
 // gulp.task('minify-css', function(){
-//   gulp.src('./app/styles/**/*.css')
+//   gulp.src('./Daas/styles/**/*.css')
 //       .pipe(minifyCSS({keepBreaks:true}))
 //       .pipe(gulp.dest(paths.min[0]));
 // });

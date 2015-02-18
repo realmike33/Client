@@ -1,4 +1,4 @@
-angular.module('Daas.signup', [])
+angular.module('Daas.auth.signup', [])
 
 .controller('SignupController', function($scope, $state, Auth){
   $scope.register = function(){

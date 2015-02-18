@@ -1,4 +1,4 @@
-angular.module('Daas.login', [])
+angular.module('Daas.auth.login', [])
 
 .controller('LoginController', function($scope, $state, Auth){
   $scope.login = function(){
