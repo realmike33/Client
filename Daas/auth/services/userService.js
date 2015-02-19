@@ -1,41 +1,36 @@
 angular.module('Daas.auth.service', [])
 
-.factory('Auth', function($http){
+.factory('Auth', function($http, $window, $interval){
   return {
 
     authLogin: function(url){
-    var windowFeatures = 'menubar=no,location=no,width=420,height=230,resizable,scrollbars=no,status=1';
-    var windowObjectReference = $window.open('http://spectreswag.herokuapp.com/api/fb/facebook/callback', 'AuthWindow', windowFeatures);
+    var windowFeatures = 'location=0,status0,modal=yes,alwaysRaised=yes,width=800,height=600';
+    var windowObjectReference = $window.open(url, 'AuthWindow', windowFeatures);
     var closed = $interval(function(){
       if(windowObjectReference.closed){
         console.log('closed');
         $interval.cancel(closed);
       }
     }, 500);
-    $http({
-      method: 'GET',
-      url: 'http://spectreswag.herokuapp.com/api/fb/facebook/callback'
-    }).then(function(resp){
-      console.log(resp);
-     })
+
     },
 
     login: function(obj){
       $http({
         method: 'POST',
-        url: '',
+        url: 'http://spectreswag.herokuapp.com/api/local/login',
         data: obj
       }).then(function(resp){
-        return resp;
+        console.log(resp);
       })
     },
     register: function(obj){
       $http({
         method: 'POST',
-        url: '',
+        url: 'http://spectreswag.herokuapp.com/api/local/register',
         data: obj
       }).then(function(resp){
-        return resp;
+        console.log(resp);
       })
     },
     logout: function(obj, cb){
