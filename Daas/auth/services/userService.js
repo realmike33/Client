@@ -21,7 +21,7 @@ angular.module('Daas.auth.service', [])
         url: 'http://spectreswag.herokuapp.com/api/local/login',
         data: obj
       }).then(function(resp){
-        console.log(resp);
+        console.log(resp.data.token);
       })
     },
     register: function(obj){
@@ -30,7 +30,7 @@ angular.module('Daas.auth.service', [])
         url: 'http://spectreswag.herokuapp.com/api/local/register',
         data: obj
       }).then(function(resp){
-        console.log(resp);
+        console.log(resp.data.token);
       })
     },
     logout: function(obj, cb){

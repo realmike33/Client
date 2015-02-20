@@ -11,7 +11,10 @@ angular.module('Daas.auth.login', [])
   };
 
   $scope.loginFacebook = function(){
-    Auth.authLogin('http://spectreswag.herokuapp.com/api/fb/facebook');
-  }
+    Auth.authLogin('http://spectreswag.herokuapp.com/auth/fb/facebook');
+  };
+  $scope.loginGoogle = function(){
+    Auth.authLogin('http://spectreswag.herokuapp.com/auth/g/google');
+  };
 
 });
